@@ -3,7 +3,7 @@
 ## Tabla de contenidos
 1. [Creación del proyecto](#creación-del-proyecto)
 2. [Limpieza del cascarón](#limpieza-del-cascarón)
-3. 
+3. [01-intro-react](#limpieza-del-cascarón)
 
 ## Creacion del proyecto
 - Para crear el "cascarón" del proyecto utilizaremos la siguiente línea de código en la carpeta raíz donde la querramos.
