@@ -4,6 +4,7 @@
 1. [Creación del proyecto](#creación-del-proyecto)
 2. [Limpieza del cascarón](#limpieza-del-cascarón)
 3. [01-intro-react](https://github.com/ArakakiAriel/react-for-dummies/tree/master/01-intro-react)
+3. [02-intro-javascript](https://github.com/ArakakiAriel/react-for-dummies/tree/master/02-intro-javascript)
 
 ## Creacion del proyecto
 - Para crear el "cascarón" del proyecto utilizaremos la siguiente línea de código en la carpeta raíz donde la querramos.
