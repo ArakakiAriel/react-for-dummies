@@ -4,9 +4,11 @@
 1. [Creación del proyecto](#creación-del-proyecto)
 2. [Limpieza del cascarón](#limpieza-del-cascarón)
 3. [01-intro-react](https://github.com/ArakakiAriel/react-for-dummies/tree/master/01-intro-react)
-3. [02-intro-javascript](https://github.com/ArakakiAriel/react-for-dummies/tree/master/02-intro-javascript)
+4. [02-intro-javascript](https://github.com/ArakakiAriel/react-for-dummies/tree/master/02-intro-javascript)
+5. [Componentes en React](#componentes-en-react)
+6. [03-counter-app](https://github.com/ArakakiAriel/react-for-dummies/tree/master/03-counter-app)
 
-## Creacion del proyecto
+## Creacion del proyecto ([LINK](https://reactjs.org/docs/create-a-new-react-app.html))
 - Para crear el "cascarón" del proyecto utilizaremos la siguiente línea de código en la carpeta raíz donde la querramos.
 ``` 
 npx create-react-app nombre-del-proyecto
@@ -20,7 +22,10 @@ npx create-react-app nombre-del-proyecto
   3. setupTests.js
 - Dentro de App.js borramos todo lo que está dentro del div "App" y le modificamos su nombre a "app"
 
-##
+## Componentes en React
+- Es una pequeña pieza de código encapsulada que realiza un trabajo en específico y es reutilizable. Puede tener estado o no.
+  - Estado: Como se encuentra la información del componente en un punto determinado en el tiempo.
+- Es una buena práctica llamar a los componentes con la notación "upper camel case" (Ej: NuevoComponente)
 
 
 -------------------------
