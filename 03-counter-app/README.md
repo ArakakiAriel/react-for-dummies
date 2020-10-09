@@ -209,7 +209,8 @@ Enzyme.configure({ adapter: new Adapter() });
 ```
 
 ### Shallow 
-- Es una función de la librería Enzyme que nos provee de pruebas para simular clicks, o validar el querySelector, etc.
+- Es una función de la librería Enzyme que nos provee de pruebas para simular clicks, o validar el querySelector, etc. 
+
 __Ejemplo completo de pruebas utilizando Enzyme:__ [(LINK)](https://github.com/ArakakiAriel/react-for-dummies/blob/master/03-counter-app/src/test/CounterApp.test.js)
 
 - __Nota:__ Cuando utilicemos el toMatchSnapshot(); nos va a dar un error la primera vez cuando corramos las pruebas, nos va a pedir crear las snapshots y para eso vamos a la consola y apretamos la tecla (u) para crearlas. Esto nos va a crear una carpeta __ snapshots__ 
