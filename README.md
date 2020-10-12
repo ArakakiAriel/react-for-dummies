@@ -1,12 +1,12 @@
 # Conceptos básicos de React
 
 ## Tabla de contenidos
-1. [Creación del proyecto](#creación-del-proyecto)
-2. [Limpieza del cascarón](#limpieza-del-cascarón)
-3. [01-intro-react](https://github.com/ArakakiAriel/react-for-dummies/tree/master/01-intro-react)
-4. [02-intro-javascript](https://github.com/ArakakiAriel/react-for-dummies/tree/master/02-intro-javascript)
-5. [Componentes (React)](#componentes-react)
-6. [03-counter-app](https://github.com/ArakakiAriel/react-for-dummies/tree/master/03-counter-app)
+- [Creación del proyecto](#creación-del-proyecto)
+- [Limpieza del cascarón](#limpieza-del-cascarón)
+- [01-intro-react](https://github.com/ArakakiAriel/react-for-dummies/tree/master/01-intro-react)
+- [02-intro-javascript](https://github.com/ArakakiAriel/react-for-dummies/tree/master/02-intro-javascript)
+- [Componentes (React)](#componentes-react)
+- [03-counter-app](https://github.com/ArakakiAriel/react-for-dummies/tree/master/03-counter-app)
   - Estructura de directorios
   - Basico React
     -  ReactDOM
@@ -16,7 +16,7 @@
       - Hooks
   - Test Unitarios
       - Enzyme
-7. [04-gif-expert-app](https://github.com/ArakakiAriel/react-for-dummies/tree/master/04-gif-expert-app)
+- [04-gif-expert-app](https://github.com/ArakakiAriel/react-for-dummies/tree/master/04-gif-expert-app)
   - useState
   - Form, Input text y Estados (Componente)
   - Comunicación entre componentes
@@ -24,7 +24,7 @@
   - Custom Hooks
   - Animaciones por CSS (Animate)
   - Despliegue de aplicación web (Local y Github Pages)
-100. [BonusTrack](#bonustrack)
+- [BonusTrack](#bonustrack)
   - [Shorcuts para creación de Componentes](#shorchuts-para-creación-de-componentes)
 
 ## Creacion del proyecto ([LINK](https://reactjs.org/docs/create-a-new-react-app.html))
