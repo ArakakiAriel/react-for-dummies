@@ -6,7 +6,6 @@ import { RandomButton } from "./components/RandomButton";
 const GifExpertApp = () => {
 
     const [categories, setCategories] = useState(['One Piece']);
-    console.log(categories);
     return (
         <>
             <h1 className='title animate__animated animate__bounce'>GifExpertApp</h1>
