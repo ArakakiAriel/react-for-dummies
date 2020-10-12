@@ -17,7 +17,13 @@
   - Test Unitarios
       - Enzyme
 7. [04-gif-expert-app](https://github.com/ArakakiAriel/react-for-dummies/tree/master/04-gif-expert-app)
-  -TODO AGREGAR CONTENIDOS VISTOS EN 04
+  - useState
+  - Form, Input text y Estados (Componente)
+  - Comunicación entre componentes
+  - useEffect
+  - Custom Hooks
+  - Animaciones por CSS (Animate)
+  - Despliegue de aplicación web (Local y Github Pages)
 100. [BonusTrack](#bonustrack)
   - [Shorcuts para creación de Componentes](#shorchuts-para-creación-de-componentes)
 
