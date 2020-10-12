@@ -19,7 +19,7 @@ export const AddCategory = ({setCategories}) => { //Importamos la funcion para m
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='form' onSubmit={handleSubmit}>
             <input 
                 type='text'
                 className='i-add-category'

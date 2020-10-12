@@ -11,7 +11,6 @@ export const GifGrid = ({category}) => {
     // }, [category]);
 
     const {data:images, loading} = useFetchGifs(category); //data:images lo que hace es que obtiene data y le cambia el nombre a la variable por images
-
     return (
         <>
             <h3><u>{category.toUpperCase()}</u></h3>

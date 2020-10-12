@@ -9,6 +9,9 @@ body{
   font-size: 1.2rem;
   color: grey;
 }
+.form{
+  width: 50%
+}
 
 .card{
   align-content: center;
@@ -32,4 +35,17 @@ body{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+.input-plus-button{
+  display: flex;
+  justify-content: center;
+}
+.random-button{
+  width: 20%;
+  margin-left: 1rem;
+  
+}
+.title{
+  display: flex;
+  justify-content: center;
 }
