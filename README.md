@@ -24,7 +24,21 @@
   - Custom Hooks
   - Animaciones por CSS (Animate)
   - Despliegue de aplicación web (Local y Github Pages)
+- [05-hook-app](https://github.com/ArakakiAriel/react-for-dummies/tree/master/05-hook-app)
+  - useState
+    - Operador spread
+  - useEffect
+  - Custom Hooks
+      - Usar CustomHooks para formularios
+      - useFetch (Custom Hook)
+  - useRef
+  - useLayoutEffect
+  - Memo - Método de React
+  - useCallback
 - [BonusTrack](#bonustrack)
+  - Emmet 
+  - Extensiones para VSCode
+  - React y Redux Dev Tools (Chrome)
   - [Shorcuts para creación de Componentes](#shorchuts-para-creación-de-componentes)
 
 ## Creacion del proyecto ([LINK](https://reactjs.org/docs/create-a-new-react-app.html))
