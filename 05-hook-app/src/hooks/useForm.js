@@ -1,8 +1,13 @@
 import { useState } from 'react'
 
+
 export const useForm = (initialState = {}) => { //Inicializamos el initialState como un objeto vacío para que no rompa en caso de que no se le envíe un objeto inicial
     const [values, setValues] = useState(initialState);
 
+
+    const reset = () => {
+        setValues(initialState);
+    }
     const handleInputChange = ({target}) => { 
         setValues({
             ...values, 
@@ -10,5 +15,5 @@ export const useForm = (initialState = {}) => { //Inicializamos el initialState 
         })
     };
 
-    return [values, handleInputChange];
+    return [values, handleInputChange, reset];
 }

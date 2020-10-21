@@ -10,6 +10,7 @@
 - [useRef](#useref-link)
 - [useLayoutEffect](#uselayouteffect-link)
 - [Memo - Método de React](#memo-método-de-react)
+- [useMemo](#usememo-link)
 - [useCallback](#usecallback-link)
 
 
@@ -496,4 +497,65 @@ export const ShowIncrement = React.memo(({increment}) => { //Hay que agregarle e
         </button>
     )
 });
+```
+
+
+
+
+# REDUCERS
+- Un reducer:
+  - Es una función que no puede ser asíncrona. 
+  - Debe ser una función pura
+    - No debe tener efectos secundarios (Debe de resolver todo internamente sin necesidad de llamar a otras funciones)
+    - No debe tener o realizar tareas asíncronas
+    - Debe de retornar siempre un estado nuevo
+    - No debe de llamar a localStorage o sessionStorage
+    - No debe de requerirse más de una acción que puede tener un argumento
+  - Generalmente recibe 2 argumentos (iniatialState y acción a ejecutar)
+
+- Pasos para utilizar reducers:
+    1. Creamos un elemento para meterlo en una acción
+    2. Crear las acciones
+    3. Mandarselos al reducer 
+    4. El reducer las ejecuta, me regresa un nuevo estado y lo redibuja
+
+
+## useReducer [(LINK)](https://es.reactjs.org/docs/hooks-reference.html#usereducer)
+
+
+## Local Storage JS
+- Se utiliza para poder almacenar data y que no se borra al actualizar el navegador
+- Solo se puede almacenar strings 
+- Si se quiere utilizar con objetos utilizaremos los metodos JSON.stringify() y JSON.parse()
+
+```js
+
+const obtenerDeLocalStorage = (key) => {
+
+    //Funcion para obtener del local storage
+    let valorObtenido = localStorage.getItem(key);
+
+    //Siempre validar que exista un elemento con la key que le pasamos, ya que puede romper el código en caso de no 
+    if(valorObtenido){
+        console.log("valor obtenido:", JSON.parse(valorObtenido));
+    }else{
+        console.log("No hay datos con la key enviada");
+    }
+}
+
+const guardarEnLocalStorage = () => {
+
+    let persona = {
+        nombre: "Pepe",
+        edad: 31,
+        email: "pepepopo@gmail.com",
+        mascota: {
+            nombre: "tururu",
+            animal: "perro"
+        }
+    }
+
+    //Guardamos el objeto como string con la key "persona" en el local storage
+    localStorage.setItem("persona", JSON.stringify(persona)); //setItem(key, value)
+}
 ```
