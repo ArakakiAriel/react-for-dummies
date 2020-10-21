@@ -1,7 +1,7 @@
 # Hooks App
 
 ## Tabla de contenidos
-- [useState](#componentes-react)
+- [useState](#useState)
     - Operador spread
 - [useEffect](#useeffect-link)
 - [Custom Hooks](#custom-hooks)
@@ -374,7 +374,7 @@ export const Layout = () => {
 
 ```
 
-## Memo - Método de React
+## Memo (Método de React)
 - Es una función que se suele utilizar en los Componentes para que no se vuelvan a llamar/ejecutar en caso de no recibir ninguna modificación en sus properties.
 - Utiliza la versión memorizada cuando tenga que redibujar sin tener cambios en sus properties.
 
