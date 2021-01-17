@@ -521,6 +521,59 @@ export const ShowIncrement = React.memo(({increment}) => { //Hay que agregarle e
 
 
 ## useReducer [(LINK)](https://es.reactjs.org/docs/hooks-reference.html#usereducer)
+- Para crearnos un reducer utilizaremos lo siguiente:
+
+```js
+import { useReducer } from 'react'
+import { todoReducer } from './todoReducer';
+
+
+//init: Retorna el valor inicial que se le quiere dar a nuestro reducer
+const init = () => {
+    //Funcion para obtener del local storage, si no encuentra datos en la key "todos" crea un array vacío como initialState
+    return JSON.parse(localStorage.getItem('todos')) || [];
+}
+
+//Inicializamos el reducer
+const [todos, dispatch] = useReducer(todoReducer, [], init);
+```
+- const [estado, dispatch] = useReducer(estadoReducer, initialState, init);
+    - estado: Nombre del componente que estemos creando (todo, personaje, listaDeSuper)
+    - dispatch:  Es una funcion que se le manda una acción y va a saber a que reducer va a redibujar la funcion.
+        ```js 
+        //Las acciones suelen tener esta estructura, un type indicando el action que va a manejar el reducer y un payload que es el dato que vamos a necesitar para realizar la acción
+        const action = {
+                type: 'remove',
+                payload: todoId
+            }
+            //Se lo enviamos al reducer
+            dispatch(action);
+        ```
+    - todoReducer: Nuestro reducer que se encargará de manejar las actions y devolver el estado requerido según la acción
+    - initialState: Podemos ingresar el initialState en caso de querer que tenga un formato inicial. (Ej: [{id:'', nombre:''}])
+    - init: Es una función que va a retornar el valor inicial que se le quiere dar a nuestro reducer (Mejor utilizar el init que el initialState ya que podemos manejar más cosas)
+```js
+//todoReducer.js
+export const todoReducer = (state = [], action) => {
+
+    //Utilizaremos un switch/case para manejar las actions, iremos ingresando acá según el action que nos llegará
+    switch (action.type) {
+        case 'add':
+            return [...state, action.payload];
+        case 'remove':
+            return state.filter(todo => todo.id !== action.payload)
+        case 'done':
+            return state.map(todo => 
+                (todo.id === action.payload)
+                ? {...todo, done: !todo.done} : todo
+            )
+        default:
+            return state;
+    }
+
+}
+```
+
 
 
 ## Local Storage JS

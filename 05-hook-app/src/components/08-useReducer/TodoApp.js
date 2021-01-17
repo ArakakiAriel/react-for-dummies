@@ -1,19 +1,24 @@
 import React, { useEffect } from 'react'
+import { useCallback } from 'react';
 import { useReducer } from 'react'
 import { useForm } from '../../hooks/useForm';
 import './styles.css'
+import { TodoList } from './TodoList';
 import { todoReducer } from './todoReducer';
 
+//init: Retorna el valor inicial que se le quiere dar a nuestro reducer
 const init = () => {
     //Funcion para obtener del local storage, si no encuentra datos en la key "todos" crea un array vacío como initialState
     return JSON.parse(localStorage.getItem('todos')) || [];
 }
 
 export const TodoApp = () => {
-    //dispatch= es una funcion que se le manda una acción y va a saber a que reducer va a redibujar la funcion.
-    //reducer=funcion reducer - initialState=estado inicial que se le puede mandar o no 
-    //init: Va a ayudar a react para que compute el estado inicial y funcione más rápido
+
     const [todos, dispatch] = useReducer(todoReducer, [], init);
+    //dispatch= es una funcion que se le manda una acción y va a saber a que reducer va a redibujar la funcion.
+    //reducer=funcion reducer
+    //initialState=estado inicial que se le puede mandar o no 
+    //init: Va a ayudar a react para que compute el estado inicial y funcione más rápido
 
     //custom hook para manejar los inputs y que cuando se haga un submit se envie el valor del input
     const [{description}, handleInputChange, reset] = useForm({
@@ -50,21 +55,23 @@ export const TodoApp = () => {
         
     }
 
-    const handleRemove = (todoId) => {
+    const handleRemove = useCallback((todoId) => {
+        console.log("Uso un handleRemove")
         const action = {
             type: 'remove',
             payload: todoId
         }
         //Se lo enviamos al reducer
         dispatch(action);
-    }
+    }, [dispatch])
 
-    const handleDone = (todoId) => {
+    const handleDone = useCallback((todoId) => {
+        console.log("uso un handleDone")
         dispatch({
             type: 'done',
             payload: todoId
         })
-    }
+    }, [dispatch])
 
     return (
         <div>
@@ -73,19 +80,11 @@ export const TodoApp = () => {
 
             <div className="row">
                 <div className="col-7">
-                    <ul className="list-group list-group-flush">
-                        {
-                            todos.map((todo, i) => (
-                                <li
-                                    key={todo.id}
-                                    className="list-group-item"
-                                >
-                                    <p className={`text-center ${(todo.done) && 'complete'}`} onClick={() => {handleDone(todo.id)}}>{i + 1}. {todo.desc}</p>
-                                    <button className="btn btn-danger" onClick={() => {handleRemove(todo.id)}}>Borrar</button>
-                                </li>
-                            ))    
-                        }
-                    </ul>
+                    <TodoList
+                        todos={todos}
+                        handleDone={handleDone}
+                        handleRemove={handleRemove}
+                    />
                 </div>
 
                 <div className="col-5">
