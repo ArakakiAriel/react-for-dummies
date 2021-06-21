@@ -8,7 +8,7 @@ const GifExpertApp = () => {
     const [categories, setCategories] = useState(['One Piece']);
     return (
         <>
-            <h1 className='title animate__animated animate__bounce'>GifExpertApp</h1>
+            <h1 className='title animate__animated animate__bounce title'>GifExpertApp</h1>
             <div className='input-plus-button'>
                 <AddCategory setCategories={setCategories}/> 
                 

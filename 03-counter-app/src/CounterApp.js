@@ -7,7 +7,7 @@ const CounterApp = ({ value = 0 }) => {
 
   const agregar = () => {
     setCounter(counter + 1); //Uso del hook
-    //setCounter( (c) => c+1)
+    //setCounter( (c) => c+1) => c+1) //Es mejor utilizarla de esta forma ya que actualiza el estado del contador en el momento
     console.log(counter);
   };
 
