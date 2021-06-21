@@ -21,7 +21,7 @@
     //En este caso creamos un estado "categories" que es un array
     const [categories, setCategories] = useState(['One Punch Man', 'Hunter x Hunter', 'One Piece', 'Hajime no Ippo']);
 ```
-- En este caso el ````setCategories``` se utilizará para poder modificar nuestro estado ```categories```
+- En este caso el ```setCategories``` se utilizará para poder modificar nuestro estado ```categories```
 - Ejemplo de uso: 
 ```js
 //Nos creamos una funcion que agrega una categoría nueva por delante
