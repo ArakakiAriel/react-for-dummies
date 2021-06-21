@@ -28,6 +28,7 @@ export const AddCategory = ({setCategories}) => { //Importamos la funcion para m
                 placeholder='Ingrese una categoría'
                 
             />
+            <button className='i-add-category-button'><b>Search</b></button>
         </form>
     );
 }

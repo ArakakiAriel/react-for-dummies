@@ -11,6 +11,7 @@ const GifExpertApp = () => {
             <h1 className='title animate__animated animate__bounce'>GifExpertApp</h1>
             <div className='input-plus-button'>
                 <AddCategory setCategories={setCategories}/> 
+                
                 <RandomButton setCategories={setCategories}/>
             </div>
             

@@ -9,7 +9,14 @@ body{
   font-size: 1.2rem;
   color: grey;
 }
+.i-add-category-button{
+  justify-content: center;
+  width: 50%;
+  font-size: 1.2rem;
+  color: grey;
+}
 .form{
+  display: flex;
   width: 50%
 }
 
