@@ -20,6 +20,8 @@
         - [Link y NavLink](#link-y-navlink)
             - [Link](#link)
             - [NavLink](#navlink)
+        - [CreateContext y useContext](#createcontext-y-usecontext)
+        
         
 
 
@@ -680,7 +682,7 @@ export const MainApp = () => {
 
 - Link:
     - Se utilizara para poder linkear nuestras rutas con las paginas creadas
-    - ```js
+    ```js
                 //NavBar.js
                 import React from 'react';
                 import {Link} from 'react-router-dom';
@@ -700,7 +702,7 @@ export const MainApp = () => {
 
 - NavLink:
     - La diferencia que tiene con el Link es que tiene mas propiedades que nos pueden servir al momento de hacer un NavBar
-    - ```js
+    ```js
         //exact: indicara que tiene que ser esa ruta exactamente para matchear.
         //activeClassName: Le da un estilo de css distinto cuando se para uno sobre el
         <NavLink exact activeClassName="active" className="nav-link" to="/">Home</NavLink>
@@ -712,7 +714,7 @@ export const MainApp = () => {
 - Sirven para proveer informacion a lo largo de los demas componentes 
 
 - Creacion de nuestro Contexto:
-    - ```js
+    ```js
             //UserContext.js
             import {createContext} from 'react';
 
@@ -720,7 +722,7 @@ export const MainApp = () => {
         ```
 
 - Uso dentro de nuestro MainApp:
-    - ```js
+    ```js
             //MainApp.js
             // Main aplication
             import React, {useState} from 'react'
@@ -743,7 +745,7 @@ export const MainApp = () => {
             }
         ```
 - El ```useContext``` se utilizara en los componentes "hijos" donde querramos utilizar los datos provistos por nuestro contexto ("padre")
-    - ```js
+    ```js
         import React, {useContext} from 'react'
         import { UserContext } from './UserContext';
 
