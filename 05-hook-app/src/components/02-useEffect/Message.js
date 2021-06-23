@@ -2,13 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
-export const Message = () => {
+export const Message = ({email}) => {
     const [coords, setCoords] = useState({x:0, y:0});
-
     const {x, y} = coords;
 
     useEffect(() => {
-        
         const mouseMove = (e) => {
             
             const coords = {
@@ -27,7 +25,7 @@ export const Message = () => {
 
     return (
         <div>
-            <h3>Un mensaje!</h3>
+            <h3>{ email }!</h3>
             <p>X: {x} - Y: {y}</p>
         </div>
     )
