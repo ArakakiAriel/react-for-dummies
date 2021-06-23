@@ -12,6 +12,9 @@
 - [Memo - Método de React](#memo-método-de-react)
 - [useMemo](#usememo-link)
 - [useCallback](#usecallback-link)
+- [useContext](#useContext)
+    - [Context](#context)
+    - [ReactRouter](#reactrouter)
 
 
 ## useState 
@@ -612,3 +615,16 @@ const guardarEnLocalStorage = () => {
     localStorage.setItem("persona", JSON.stringify(persona)); //setItem(key, value)
 }
 ```
+
+
+## useContext
+
+### Context
+- El context va a ser un espacio que nos ayudara a conectar estados entre dos componentes que no estan contenidos uno dentro del otro.
+
+### ReactRouter [(LINK)](https://reactrouter.com/web/guides/quick-start)
+
+#### <u>Instalacion:</u>
+    - Se corre la siguiente linea de codigo para instalarlo: ```npm install react-router-dom```
+
+#### <u>Configuracion:</u>
