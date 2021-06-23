@@ -15,6 +15,12 @@
 - [useContext](#useContext)
     - [Context](#context)
     - [ReactRouter](#reactrouter)
+        - [Instalacion](#instalacion)
+        - [Configuracion](#configuracion)
+        - [Link y NavLink](#link-y-navlink)
+            - [Link](#link)
+            - [NavLink](#navlink)
+        
 
 
 ## useState 
@@ -624,7 +630,125 @@ const guardarEnLocalStorage = () => {
 
 ### ReactRouter [(LINK)](https://reactrouter.com/web/guides/quick-start)
 
-#### <u>Instalacion:</u>
-    - Se corre la siguiente linea de codigo para instalarlo: ```npm install react-router-dom```
+#### Instalacion:
+- Se corre la siguiente linea de codigo para instalarlo: ```npm install react-router-dom```
 
-#### <u>Configuracion:</u>
+#### Configuracion:
+- Crearemos un componente AppRouter.js para manejar las rutas de nuestra pagina web
+```js
+//AppRouter.js
+
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import { AboutScreen } from './AboutScreen';
+import { HomeScreen } from './HomeScreen';
+import { LoginScreen } from './LoginScreen';
+
+export const AppRouter = () => {
+    return (
+        <Router>
+            <div>
+                <Switch>
+                    <Route exact path="/" component={HomeScreen}/> 
+                    <Route exact path="/about" component={AboutScreen}/>
+                    <Route exact path="/login" component={LoginScreen}/>
+                    
+                </Switch>
+            </div>
+        </Router>
+    )
+}
+```
+- Desde nuestro MainApp lo llamaremos de la siguiente manera:
+```js
+// Main aplication
+import React from 'react'
+import { AppRouter } from './AppRouter'
+
+export const MainApp = () => {
+    return (
+        <AppRouter/>
+    )
+}
+```
+
+#### Link y NavLink
+
+- Link:
+    - Se utilizara para poder linkear nuestras rutas con las paginas creadas
+    - ```js
+                //NavBar.js
+                import React from 'react';
+                import {Link} from 'react-router-dom';
+
+                export const NavBar = () => {
+                    return (
+                        <nav>
+                            <ul>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/about">About</Link></li>
+                                <li><Link to="/login">Login</Link></li>
+                            </ul>
+                        </nav>
+                    )
+                }
+        ```
+
+- NavLink:
+    - La diferencia que tiene con el Link es que tiene mas propiedades que nos pueden servir al momento de hacer un NavBar
+    - ```js
+        //exact: indicara que tiene que ser esa ruta exactamente para matchear.
+        //activeClassName: Le da un estilo de css distinto cuando se para uno sobre el
+        <NavLink exact activeClassName="active" className="nav-link" to="/">Home</NavLink>
+        ```
+
+#### CreateContext y useContext
+- Los Context son high user components 
+- Suelen utilizarse en los MainComponents enmarcando asi los demas componentes
+- Sirven para proveer informacion a lo largo de los demas componentes 
+
+- Creacion de nuestro Contexto:
+    - ```js
+            //UserContext.js
+            import {createContext} from 'react';
+
+            export const UserContext = createContext(null); //Crea un context
+        ```
+
+- Uso dentro de nuestro MainApp:
+    - ```js
+            //MainApp.js
+            // Main aplication
+            import React, {useState} from 'react'
+            import { AppRouter } from './AppRouter'
+            import { UserContext } from './UserContext'
+
+            export const MainApp = () => {
+
+                
+                const [user, setUser] = useState({});
+
+                return (
+                    <UserContext.Provider value={{
+                        user,
+                        setUser
+                    }}> //De esta manera estaremos enviando un objeto a nuestras rutas
+                        <AppRouter/>
+                    </UserContext.Provider>
+                )
+            }
+        ```
+- El ```useContext``` se utilizara en los componentes "hijos" donde querramos utilizar los datos provistos por nuestro contexto ("padre")
+    - ```js
+        import React, {useContext} from 'react'
+        import { UserContext } from './UserContext';
+
+        const userContext = useContext(UserContext);
+        const {user, setUser} = useContext(UserContext)
+        ```
+    - De esta forma podremos actualizar estados de forma global al instante, sin necesidad de estar pasando el state de una componente a otro.
+

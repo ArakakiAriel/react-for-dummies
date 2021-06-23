@@ -1,11 +1,18 @@
 // Main aplication
-import React from 'react'
+import React, {useState} from 'react'
+import { AppRouter } from './AppRouter'
+import { UserContext } from './UserContext'
 
 export const MainApp = () => {
+
+    const [user, setUser] = useState({});
+
     return (
-        <>
-            <h1>Main App</h1>
-            <hr/>
-        </>
+        <UserContext.Provider value={{
+            user,
+            setUser
+        }}> //De esta manera estaremos enviando un objeto a nuestras rutas
+            <AppRouter/>
+        </UserContext.Provider>
     )
 }
