@@ -7,7 +7,7 @@ export const FocusScreen = () => {
 
 
     const handleClick = () => {
-        // document.querySelector('input').focus();
+        //document.querySelector('input').focus();
         inputRef.current.select();
         console.log(inputRef)
     }
