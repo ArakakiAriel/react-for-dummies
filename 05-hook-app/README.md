@@ -14,9 +14,13 @@
 - [useCallback](#usecallback-link)
 - [useContext](#useContext)
     - [Context](#context)
-    - [ReactRouter](#reactrouter)
+    - [ReactRouterDom](#reactrouterdom)
         - [Instalacion](#instalacion)
-        - [Configuracion](#configuracion)
+        - [Configuracion de un Router](#configuracion-de-un-router)
+            - [Router](#router)
+            - [Switch](#switch)
+            - [Route](#route)
+            - [Redirect](#redirect) 
         - [Link y NavLink](#link-y-navlink)
             - [Link](#link)
             - [NavLink](#navlink)
@@ -625,17 +629,17 @@ const guardarEnLocalStorage = () => {
 ```
 
 
-## useContext
+# useContext
 
-### Context
+## Context
 - El context va a ser un espacio que nos ayudara a conectar estados entre dos componentes que no estan contenidos uno dentro del otro.
 
-### ReactRouter [(LINK)](https://reactrouter.com/web/guides/quick-start)
+## ReactRouterDom [(LINK)](https://reactrouter.com/web/guides/quick-start)
 
-#### Instalacion:
+### Instalacion:
 - Se corre la siguiente linea de codigo para instalarlo: ```npm install react-router-dom```
 
-#### Configuracion:
+### Configuracion de un Router:
 - Crearemos un componente AppRouter.js para manejar las rutas de nuestra pagina web
 ```js
 //AppRouter.js
@@ -677,8 +681,36 @@ export const MainApp = () => {
     )
 }
 ```
+#### Router
+- Es el contenedor principal.
+- Va a existir solo en el main Router(AppRouter)
+- Tag: ```<Router></Router>```
+#### Switch
+- Es el contenedor de las rutas (Route).
+- Tag: ```<Switch></Switch>```
+#### Route
+- Indicaran las rutas a las cuales uno puede acceder
+- Ejemplo*
+    ```js
+    <Route exact path="/about" component={AboutScreen}/>
+    //El exact indicara que si o si tiene que ser exacta la ruta para poder ingresar
+    //El component indicara la Screen a la cual se redireccionara
+    ```
+#### Redirect
+- Se puede utilizar para redirigir a una pagina en particular en caso de no matchear con ninguna ruta.
+- Ej:
+    ```js
+    <div className="container mt-4">
+        <Switch>
+            <Route exact path="/marvel" component={MarvelScreen} />
+            <Route exact path="/dc" component={DcScreen} />
+            <Route exact path="/hero/:hero_id" component={HeroScreen} />
+            <Redirect to="/marvel" /> //En caso de no matchear con ninguna route se redireccionara a la ruta /marvel
+        </Switch>
+    </div>
+    ```
 
-#### Link y NavLink
+### Link y NavLink
 
 - Link:
     - Se utilizara para poder linkear nuestras rutas con las paginas creadas
@@ -708,7 +740,7 @@ export const MainApp = () => {
         <NavLink exact activeClassName="active" className="nav-link" to="/">Home</NavLink>
         ```
 
-#### CreateContext y useContext
+### CreateContext y useContext
 - Los Context son high user components 
 - Suelen utilizarse en los MainComponents enmarcando asi los demas componentes
 - Sirven para proveer informacion a lo largo de los demas componentes 
@@ -751,6 +783,6 @@ export const MainApp = () => {
 
         const userContext = useContext(UserContext);
         const {user, setUser} = useContext(UserContext)
-        ```
-    - De esta forma podremos actualizar estados de forma global al instante, sin necesidad de estar pasando el state de una componente a otro.
+    ```
+    De esta forma podremos actualizar estados de forma global al instante, sin necesidad de estar pasando el state de una componente a otro.
 
