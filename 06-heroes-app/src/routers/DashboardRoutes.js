@@ -8,6 +8,7 @@ import {
 import { MarvelScreen } from '../components/marvel/MarvelScreen';
 import { DcScreen } from '../components/dc/DcScreen';
 import { HeroScreen } from '../components/hero/HeroScreen';
+import { SearchScreen } from '../components/search/SearchScreen';
 
 
 export const DashboardRoutes = () => {
@@ -20,6 +21,7 @@ export const DashboardRoutes = () => {
                     <Route exact path="/marvel" component={MarvelScreen} />
                     <Route exact path="/dc" component={DcScreen} />
                     <Route exact path="/hero/:hero_id" component={HeroScreen} />
+                    <Route exact path="/search" component={SearchScreen}/>
                     <Redirect to="/marvel" />
                 </Switch>
             </div>

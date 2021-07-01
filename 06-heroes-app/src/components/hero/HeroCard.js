@@ -12,7 +12,7 @@ export const HeroCard = ({
 
 
     return (
-        <div className="card ms-3" style={{maxWidth:540} }>
+        <div className="card ms-3 an-lf-sl" style={{maxWidth:540} }>
             <div className="row no-gutters">
                 <div className="col-md-4">
                     <Link to={`./hero/${id}`}>
@@ -21,12 +21,12 @@ export const HeroCard = ({
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
-                        <h5 className="card-title">{superhero}</h5>
+                        <h5 className="card-hero-name">{superhero}</h5>
                         <p className="card-text">{alter_ego}</p>
                         {
                             alter_ego !== characters && <p className="card-text">{characters}</p> 
                         }
-                        <p className="card-text"><small class="text-muted">{first_appearance}</small></p>
+                        <p className="card-text"><small className="text-muted">{first_appearance}</small></p>
 
                         <Link className="card-link" to={`./hero/${id}`}>Mas...</Link>
                     </div>

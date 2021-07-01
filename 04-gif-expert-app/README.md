@@ -216,7 +216,7 @@ export const useFetchGifs = (category) => {
 
 ## Animaciones por CSS [(ANIMATE)](https://animate.style/)
 - Es una dependencia que se puede utilizar para darle animación CSS a los elementos
-- La mejor forma de importarlo a nuestro proyecto es en el archivo index.html, dentro del tag <head> escribimos:
+- La mejor forma de importarlo a nuestro proyecto es en el archivo index.html, dentro del tag <"head"> escribimos:
 ```html
       <link
         rel="stylesheet"

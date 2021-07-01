@@ -11,21 +11,58 @@
     display: flex;
     flex-direction: column;
 }
+
+.an-lf-sl{
+  animation-name: moveInLeft;
+  animation-duration:0.5s;
+}
+
 .img{
     border-radius: 15px 50px; 
-    
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .col-container {
   display: table;
   width: 100%;
+  
 }
 .col {
   display: table-cell;
   width: 100%;
   background-color: rgba(235, 226, 219, 0.2) ;
   padding: 16px;
+  
 }
 
 .card-title{
   font-family: Blippo, fantasy;
+  text-shadow: 2px 2px 5px grey;
+}
+
+
+.card-hero-name{
+  font-family: Blippo, fantasy;
+}
+.card-body{
+  
+}
+
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) translateY(-50px);
+  }
+
+  33% {
+    opacity: 0.33;
+    transform: translateX(15px) translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
 }

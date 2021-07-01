@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Redirect, useParams } from 'react-router-dom';
 import { getHeroById } from '../../selectors/getHeroById';
 import './HeroScreen.css';
 
 export const HeroScreen = ({history}) => {
     
-    const params = useParams(); //custom hook que obtiene todos los parametros que mandemos por url
+    const {hero_id} = useParams(); //custom hook que obtiene todos los parametros que mandemos por url
 
-    const hero = getHeroById(params.hero_id);
+    const hero = useMemo(() => getHeroById(hero_id), [hero_id]);
+    
 
     const handleReturn = (e) => {
         e.preventDefault();
