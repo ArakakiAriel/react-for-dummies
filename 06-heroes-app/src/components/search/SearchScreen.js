@@ -34,19 +34,19 @@ export const SearchScreen = ({history}) => {
                     <form onSubmit={handleSearch}>
                         <input type="text"
                         placeholder="Heroes name"
-                        className="form-control"
+                        className="form-control mb-3"
                         name="heroName"
                         value = {heroName}
                         onChange={handleInputChange}
                         />
-                        <button className="btn m-1 btn-block btn-outline-primary">Submit</button>
+                        <button className="btn  btn-block btn-warning">Submit</button>
                     </form>
                 </div>
                 <div className="col-7">
                     <h4>Results</h4>
                     <hr/>
                     {
-                        (q === '') && <div className="alert alert-info">Search a hero</div>
+                        (q === '') && <div className="alert alert-warning">Search a hero</div>
                     }
                     {
                         
@@ -54,7 +54,7 @@ export const SearchScreen = ({history}) => {
                             <div className="alert alert-danger">No heroes found</div>:
                             
                             heroesFiltered.map(hero => (
-                                (hero.superhero.toLowerCase().includes(q)) && <HeroCard key={hero.id} {...hero}/>
+                                (hero.superhero.toLowerCase().includes(q)) && <div className="mb-2"><HeroCard key={hero.id} {...hero}/></div>
                             ))
                         
                     }

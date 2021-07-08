@@ -49,6 +49,19 @@
   
 }
 
+.card-text{
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  overflow: hidden;
+} /*Con esto podemos esconder el texto que sobresale si es muy largo*/
+
+.logo{
+  max-width: 40px;
+  max-height: 40px;
+  margin-right: 10px;
+  margin-top: -3px;
+}
+
 
 @keyframes moveInLeft {
   0% {
