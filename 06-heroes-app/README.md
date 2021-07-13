@@ -170,7 +170,74 @@
 
 ## Proteccion de rutas
 
+- Para la proteccion de rutas utilizaremos un AuthContext (Repasar useContext en unidad [05-hook-app](https://github.com/ArakakiAriel/react-for-dummies/tree/master/05-hook-app#useContext)) para indicar un estado de autenticacion en nuestras rutas dentro de la web
+- Tambien necesitaremos un authReducer, la cual sera una funcion para poder cambiar el estado de login de nuestro usuario en todas las paginas dentro de nuestra web.
 
+```js
+//authReducer.js
+import { types } from "../types/types";
+
+export const authReducer = (state ={}, action) => {
+
+    switch(action.type){
+        case types.login:
+            return{
+                ...action.payload,
+                logged: true
+            }
+            break;
+        case types.logout:
+            return{
+                logged: false
+            }
+            break;
+        default:
+            return state;
+    }
+}
+```
+
+
+### Login
+- Debemos importar el useContext y nuestro AuthContext creado.
+    - useContext: Podremos utilizar el dispatch para cambiar el contenido del contexto user
+    - AuthContext: Nuestro contexto creado.
+
+```js
+//LoginScreen
+import React, { useContext } from 'react'
+import {AuthContext} from '../../auth/AuthContext';
+import {authReducer} from '../../auth/authReducer';
+import { types } from '../../types/types';
+
+export const LoginScreen = ({history}) => {
+
+    const {dispatch} = useContext(AuthContext);
+    const action = {
+        type: types.login, 
+        payload: {
+            user: "kenjiman"
+        }
+    }
+
+    const handleLogin = () => {
+        dispatch(action); //Cambia el contexto del user a lo que querramos
+    }
+}
+
+```
+- Utilizaremos un useEffect en la clase principal para poder almacenar el estado del contexto user en nuestro localStorage
+```js
+//HeroesApp.js
+
+const init = () => {
+    return JSON.parse(localStorage.getItem('hero_user')) || {logged: false}; //Obtendra el ultimo estado de nuestro localStorage y si es la primera vez solamente un logged en false
+}
+
+    useEffect( () => {
+        localStorage.setItem("hero_user", JSON.stringify(user));
+    }, [user]); //Ejecutaremos el setItem solamente cuando el user sea modificado
+```
 
 
 

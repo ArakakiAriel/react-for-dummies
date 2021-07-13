@@ -11,10 +11,10 @@ import { HeroScreen } from '../components/hero/HeroScreen';
 import { SearchScreen } from '../components/search/SearchScreen';
 
 
-export const DashboardRoutes = () => {
+export const DashboardRoutes = ({history}) => {
     return (
         <>
-            <Navbar/>
+            <Navbar history={history}/>
 
             <div className="container mt-4">
                 <Switch>

@@ -31,7 +31,7 @@ export const SearchScreen = ({history}) => {
                     <h4>Search Form</h4>
                     <hr/>
 
-                    <form onSubmit={handleSearch}>
+                    <form onSubmit={handleSearch} autoComplete="off">
                         <input type="text"
                         placeholder="Heroes name"
                         className="form-control mb-3"

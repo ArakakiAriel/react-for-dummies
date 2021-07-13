@@ -35,6 +35,22 @@
   - useLayoutEffect
   - Memo - Método de React
   - useCallback
+- [06-heroes-app](https://github.com/ArakakiAriel/react-for-dummies/tree/master/06-heroes-app)
+  - Router
+      - Creacion de un segundo router
+  - [History push/replace
+      - Push
+      - Replace
+  - [QueryString
+      - Agregar parametros por url
+      - useLocation() y QueryString
+  - Proteccion de rutas
+      -[](#)
+      -[](#)
+      -[](#)
+  - [QueryString](#contenido-extra)
+      - [CSS](#css)
+      - [Color thief](#color-thief-link)
 - [BonusTrack](#bonustrack)
   - Emmet 
   - Extensiones para VSCode

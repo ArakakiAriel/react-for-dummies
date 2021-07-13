@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useEffect, useReducer } from 'react'
+import { AuthContext } from './auth/AuthContext'
+import { authReducer } from './auth/authReducer'
 import { Navbar } from './components/ui/NavBar'
 import { AppRouter } from './routers/AppRouter'
 
+
+const init = () => {
+    return JSON.parse(localStorage.getItem('hero_user')) || {logged: false};
+}
+
 export const HeroesApp = () => {
+
+    const [user, dispatch] = useReducer(authReducer, {}, init)
+
+    useEffect( () => {
+        localStorage.setItem("hero_user", JSON.stringify(user));
+    }, [user]);
+
     return (
         <>
-            <AppRouter/>
+            <AuthContext.Provider value={{ user, dispatch }}>
+                <AppRouter/>
+            </AuthContext.Provider>
+
         </>
     )
 }
