@@ -14,7 +14,7 @@ import { SearchScreen } from '../components/search/SearchScreen';
 export const DashboardRoutes = ({history}) => {
     return (
         <>
-            <Navbar history={history}/>
+            <Navbar history={history}/> 
 
             <div className="container mt-4">
                 <Switch>

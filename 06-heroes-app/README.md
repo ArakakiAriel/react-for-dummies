@@ -239,6 +239,16 @@ const init = () => {
     }, [user]); //Ejecutaremos el setItem solamente cuando el user sea modificado
 ```
 
+### Logout
+- Para el logout deberemos modificar el navBar y utilizar un ```buton``` en vez de un ```NavLink``` para el boton de login/logout
+- Llamaremos una funcion en el onClick del boton para cambiar el contexto user utilizando el dispatch
+- Deberemos pasar el ```{history}``` desde el DashboardRoutes ya que hasta el navBar no llega
+```js
+    export const DashboardRoutes = ({history}) => {
+        return (
+            <>
+                <Navbar history={history}/> 
+```
 
 
 
